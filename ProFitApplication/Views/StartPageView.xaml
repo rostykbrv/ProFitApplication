@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:ProFitApplication.ViewModels"
+             x:Class="ProFitApplication.Views.StartPageView"
+             Title="StartPageView">
+    <ContentPage.Background>
+        
+         <LinearGradientBrush>
+            <GradientStop Color="#201c1c"
+                          Offset="0.1"/>
+            <GradientStop Color="#ffffff"
+                          Offset="1.0"/>
+         </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid Margin="25,20,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height=".3*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".80*"/>
+            <ColumnDefinition Width=".20*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--#Вивід ім'я користувача -->
+        <VerticalStackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
+            <Label FontSize="20"
+                   FontFamily="RubikBold"
+                   Text="ДОБРОГО ДНЯ"
+                   TextColor="#8e8e8e"/>
+            <Label FontSize="28"
+                   FontFamily="RubikBold"
+                   Margin="0,10,0,0"
+                   Text="ВЛАДИСЛАВ ШЕВЧЕНКО"
+                   TextColor="#f1f1f1"/>
+        </VerticalStackLayout>
+
+
+        <!--#Фото користувача -->
+        <Border Grid.Column="1"
+                Margin="0,0,25,0"
+                Grid.Row="0"
+                HeightRequest="70"
+                HorizontalOptions="End"
+                StrokeShape="RoundRectangle 80,80,80,80"
+                WidthRequest="70">
+            <Image
+                   Aspect="AspectFill"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Source="profilephoto.jpg"
+                   WidthRequest="100"/>
+        </Border>
+
+
+        <VerticalStackLayout Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center">
+            <Label
+                FontFamily="RubikBold"
+                FontSize="34"
+                Text="СПИСОК ТРЕНУВАНЬ"
+                TextColor="#baf247"/>
+        </VerticalStackLayout>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="-25,-25,0,0" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+                <Label
+                    Margin="25,20,0,0"
+                    FontSize="26"
+                    FontFamily="NexaRegular"
+                    Text="Продвинутий"
+                    TextColor="#3d3d3d"/>
+
+                <Label
+                    Margin="25,0,0,0"
+                    FontSize="18"
+                    FontFamily="NexaRegular"
+                    Text="Рівень вправ"
+                    TextColor="#528f8e"/>
+            </VerticalStackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center" Margin="25,25,0,0">
+                <Button
+                    BackgroundColor="#bcf246"
+                    CornerRadius="90"
+                    WidthRequest="50"
+                    HeightRequest="50"/>
+
+                <Button
+                    BackgroundColor="#bcf246"
+                    CornerRadius="90"
+                    WidthRequest="50"
+                    HeightRequest="50"/>
+
+            </StackLayout>
+
+            <CollectionView
+                SelectionMode="Single"
+                Margin="25,20,10,0"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                VerticalOptions="Center"
+                ItemsSource="{Binding Workouts}">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions=".40*,.60*"
+                              Padding="10"
+                              HeightRequest="125"
+                              WidthRequest="375">
+                            <Frame
+                                Grid.ColumnSpan="2"
+                                BackgroundColor="#efefef"
+                                CornerRadius="25">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                </Frame.GestureRecognizers>
+
+                            </Frame>
+                            <Border Grid.RowSpan="2"
+                                    Margin="5,0,0,0"
+                                    HeightRequest="90"
+                                    HorizontalOptions="Start"
+                                    WidthRequest="170"
+                                    StrokeShape="RoundRectangle 15,15,15,15">
+                                <Image HeightRequest="110" Source="{Binding WorkoutImage}"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1"
+                                                  VerticalOptions="Center">
+                                <Label Margin="18,0,0,0"
+                                       FontSize="18"
+                                       FontFamily="NexaRegular"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding WorkoutName}"
+                                       TextColor="#434343"/>
+                                <Label Margin="18,5,0,0"
+                                       FontSize="12"
+                                       FontFamily="NexaRegular"
+                                       HorizontalTextAlignment="Center"
+                                       Text="{Binding WorkoutsNumber}"
+                                       TextColor="#6e6e6e"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+
+
+    </Grid>
+</ContentPage>
