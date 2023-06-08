@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProFitApplication.Views.UpperBodyTraining.PushUp"
+             Title="PushUp"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <Grid RowDefinitions=".1*,.5*,.1*,.1*,.3*">
+        <Label Grid.Row="0"
+               Text="Відтискання"
+               FontFamily="RubikBold"
+               FontSize="24"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <Image Grid.Row="1"
+               x:Name="imgLoader"
+               Source="push_ups.gif"
+               HorizontalOptions="Center"
+               IsAnimationPlaying="False"/>
+        <ImageButton Grid.Row="2"
+                    Source="startlogo.png"                
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                     BackgroundColor="Green"
+                     CornerRadius="15"
+                     HeightRequest="60"
+                     WidthRequest="90"
+                     Clicked="NextExercise_Clicked"/>
+        <Label Grid.Row="3"
+               Text="Техніка виконання"
+               FontFamily="RubikBold"
+               FontSize="23"
+               HorizontalOptions="Start"
+               Margin="10,10,0,0"/>
+        <Label Grid.Row="4"
+               Text="1.Прийняти положення упору лежачи на підлозі.&#10;2.Зігнути руки в ліктях, опустивши при цьому тіло до поверхні.&#10;3.На видиху, напружуючи трицепси, випряміть руки піднявши корпус вгору."
+               HorizontalOptions="Start"
+               FontFamily="RubikRegular"
+               FontSize="17"
+               Margin="10,0,5,0"/>
+    </Grid>
+</ContentPage>

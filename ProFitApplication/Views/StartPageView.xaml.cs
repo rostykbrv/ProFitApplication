@@ -6,14 +6,12 @@ namespace ProFitApplication.Views;
 
 public partial class StartPageView : ContentPage
 {
-  
-
     public StartPageView(StartPageViewModel startPageViewModel)
     {
         InitializeComponent();
         this.BindingContext = startPageViewModel;
-    }
 
+    }
     private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
         var workout = ((VisualElement)sender).BindingContext as Workout;

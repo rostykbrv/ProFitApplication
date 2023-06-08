@@ -1,12 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ProFitApplication.ViewModels"
+             xmlns:models="clr-namespace:ProFitApplication.Models"
              x:Class="ProFitApplication.Views.GymWorkoutPage"
-             Title="GymWorkoutPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Gym!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="GymWorkoutPage"
+             x:DataType="viewmodels:GymWorkoutPageViewModel">
+    <ContentPage.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#020024"
+                          Offset="0.56"/>
+            <GradientStop Color="#201c1c"
+                          Offset="1"/>
+        </RadialGradientBrush>
+
+    </ContentPage.Background>
+    <ScrollView>
+        <Grid RowDefinitions=".1*,.80*">
+            <Label
+                Margin="25,25,0,0"
+                Grid.Row="0"
+                Text="Комплекси вправ для виконання в спортивному залі"
+                FontFamily="RubikBold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                TextColor="#baf247"/>
+
+            <Border
+                Stroke="#F8F8F8"
+                BackgroundColor="#F8F8F8"
+                StrokeThickness="1"
+                StrokeShape="RoundRectangle 40,40,0,0"
+                Grid.Row="1">
+                <CollectionView
+                    ItemsSource="{Binding ExerciseGroups}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:ExerciseGroup">
+                            <StackLayout Margin="-1">
+                                <Frame
+                                    BackgroundColor="#efefef"
+                                    HeightRequest="110"
+                                    WidthRequest="360"
+                                    CornerRadius="15"
+                                    HorizontalOptions="Center"
+                                    Margin="10,30,10,5"
+                                    BorderColor="Black">
+                                    <Frame.Shadow>
+                                        <Shadow Brush="black"
+                                                Offset="20,20"
+                                                Radius="40"
+                                                Opacity="0.9"/>
+                                    </Frame.Shadow>
+                                    <Grid ColumnDefinitions="0.6*,*">
+                                        <Border Grid.Column="0"
+                                                StrokeShape="RoundRectangle 7,7,7,7">
+                                            <Image Aspect="AspectFill"
+                                               Source="{Binding ExerciseGroupImage}"/>
+                                        </Border>
+                                        <Label Grid.Column="1"
+                                               Text="{Binding ExerciseGroupName}"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               FontFamily="RubikBold"
+                                               FontSize="18"
+                                               Margin="20,0,0,0"/>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Border>
+        </Grid>
+    </ScrollView>
 </ContentPage>

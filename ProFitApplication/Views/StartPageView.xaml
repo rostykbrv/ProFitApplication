@@ -3,16 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:ProFitApplication.ViewModels"
              x:Class="ProFitApplication.Views.StartPageView"
-             Title="StartPageView">
-    <ContentPage.Background>
-        
-         <LinearGradientBrush>
-            <GradientStop Color="#201c1c"
-                          Offset="0.1"/>
-            <GradientStop Color="#ffffff"
-                          Offset="1.0"/>
-         </LinearGradientBrush>
-    </ContentPage.Background>
+             Title="StartPageView"
+             BackgroundColor="#5BB318">
     <Grid Margin="25,20,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height=".3*"/>
@@ -30,12 +22,13 @@
         <VerticalStackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
             <Label FontSize="20"
                    FontFamily="RubikBold"
-                   Text="ДОБРОГО ДНЯ"
-                   TextColor="#8e8e8e"/>
+                   Text="ВІТАЄМО"
+                   FontAttributes="Italic"
+                   TextColor="#333333"/>
             <Label FontSize="28"
                    FontFamily="RubikBold"
                    Margin="0,10,0,0"
-                   Text="ВЛАДИСЛАВ ШЕВЧЕНКО"
+                   Text="{Binding User.Name}"
                    TextColor="#f1f1f1"/>
         </VerticalStackLayout>
 
@@ -44,15 +37,17 @@
         <Border Grid.Column="1"
                 Margin="0,0,25,0"
                 Grid.Row="0"
-                HeightRequest="70"
+                HeightRequest="90"
                 HorizontalOptions="End"
                 StrokeShape="RoundRectangle 80,80,80,80"
-                WidthRequest="70">
+                WidthRequest="90"
+                StrokeThickness="2"
+                Stroke="white">
             <Image
-                   Aspect="AspectFill"
-                   HeightRequest="100"
+                   Aspect="AspectFit"
+                   HeightRequest="120"
                    HorizontalOptions="Center"
-                   Source="profilephoto.jpg"
+                   Source="{Binding User.ProfilePhoto}"
                    WidthRequest="100"/>
         </Border>
 
@@ -62,7 +57,7 @@
                 FontFamily="RubikBold"
                 FontSize="34"
                 Text="СПИСОК ТРЕНУВАНЬ"
-                TextColor="#baf247"/>
+                TextColor="#FFFFFF"/>
         </VerticalStackLayout>
 
         <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="-25,-25,0,0" BackgroundColor="White">
@@ -76,36 +71,22 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+            <VerticalStackLayout Grid.Column="0" Grid.ColumnSpan="2">
                 <Label
                     Margin="25,20,0,0"
                     FontSize="26"
                     FontFamily="NexaRegular"
-                    Text="Продвинутий"
+                    Text="Оберіть групу тренувань"
                     TextColor="#3d3d3d"/>
 
                 <Label
                     Margin="25,0,0,0"
                     FontSize="18"
                     FontFamily="NexaRegular"
-                    Text="Рівень вправ"
-                    TextColor="#528f8e"/>
+                    Text="Натисніть на потрібну групу"
+                    TextColor="#ACACAC"/>
             </VerticalStackLayout>
-            <StackLayout Grid.Row="0" Grid.Column="1" Spacing="35" Orientation="Horizontal" HorizontalOptions="Center" Margin="25,25,0,0">
-                <Button
-                    BackgroundColor="#bcf246"
-                    CornerRadius="90"
-                    WidthRequest="50"
-                    HeightRequest="50"/>
-
-                <Button
-                    BackgroundColor="#bcf246"
-                    CornerRadius="90"
-                    WidthRequest="50"
-                    HeightRequest="50"/>
-
-            </StackLayout>
-
+            
             <CollectionView
                 SelectionMode="Single"
                 Margin="25,20,10,0"

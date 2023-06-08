@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProFitApplication.Views.LoginPage"
+             Title="LoginPage"
+             Shell.TabBarIsVisible="False">
+    <StackLayout Margin="50">
+        <Image Source="logo.png"
+               WidthRequest="200"
+               HeightRequest="200"
+               HorizontalOptions="Center"/>
+        <Entry x:Name="nameEntry" 
+               Placeholder="Ім'я"/>
+        <Entry x:Name="ageEntry" 
+               Placeholder="Вік" 
+               Keyboard="Numeric"/>
+        <Entry x:Name="weightEntry" 
+               Placeholder="Вага" 
+               Keyboard="Numeric" />
+        <Entry x:Name="heightEntry" 
+               Placeholder="Зріст" 
+               Keyboard="Numeric" />
+        <Grid RowDefinitions="30,70" Margin="10,10,10,10">
+            <Label Grid.Row="0"
+                   Text="Фото профілю"
+                   FontFamily="RubikRegular"
+                   FontSize="15"
+                   VerticalOptions="Center"/>
+            <Image
+                Grid.Row="1"
+                x:Name="userPhoto"
+                Source="defaultprofile.jpg"
+                HeightRequest="150"
+                HorizontalOptions="End"/>
+        </Grid>
+
+        <Button Text="Увійти" 
+                Clicked="OnLoginButtonClicked"
+                BackgroundColor="#00CC66"
+                Margin="10,60,10,10"/>
+
+    </StackLayout>
+</ContentPage>

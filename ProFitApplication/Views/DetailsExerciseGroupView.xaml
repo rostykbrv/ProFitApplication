@@ -90,7 +90,8 @@
                             BackgroundColor="#ccff00"
                             Text="Розпочати"
                             TextColor="#000"
-                            FontFamily="RubikRegular"/>
+                            FontFamily="RubikRegular"
+                            Clicked="Start_Clicked"/>
                 </Grid>
             </Border>
         </Grid>

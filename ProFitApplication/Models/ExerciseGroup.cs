@@ -18,6 +18,9 @@ namespace ProFitApplication.Models
 
         public string ExerciseGroupTimeSpent { get; set; }
 
-        public ObservableCollection<Exercise> Exercises { get; set; }   
+        public string SelectedExerciseGroup
+        {
+            get => ExerciseGroupName;
+        }
     }
 }

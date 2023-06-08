@@ -7,12 +7,13 @@
              x:DataType="viewmodels:HomeWorkoutPageViewModel"
              Title="HomeWorkoutPageView">
     <ContentPage.Background>
-        <LinearGradientBrush>
-            <GradientStop Color="#717171"
-                          Offset="0.3"/>
-            <GradientStop Color="#ffffff"
-                          Offset="0.9"/>
-        </LinearGradientBrush>
+        <RadialGradientBrush>
+            <GradientStop Color="#020024"
+                          Offset="0.56"/>
+            <GradientStop Color="#201c1c"
+                          Offset="1"/>
+        </RadialGradientBrush>
+      
     </ContentPage.Background>
     <ScrollView>
         <Grid RowDefinitions=".1*,.80*">
@@ -41,7 +42,7 @@
                         <DataTemplate x:DataType="models:ExerciseGroup">
                             <StackLayout Margin="-1">
                                 <Frame
-                                    BackgroundColor="#fff"
+                                    BackgroundColor="#efefef"
                                     HeightRequest="110"
                                     WidthRequest="360"
                                     CornerRadius="15"

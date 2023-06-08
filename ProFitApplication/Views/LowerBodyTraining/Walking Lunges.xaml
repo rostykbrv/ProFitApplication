@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProFitApplication.Views.LowerBodyTraining.Walking_Lunges"
+             Title="Walking_Lunges"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <Grid RowDefinitions=".1*,.5*,.1*,.1*,.3*">
+        <Label Grid.Row="0"
+               Text="Випади"
+               FontFamily="RubikBold"
+               FontSize="24"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <Image Grid.Row="1"
+               x:Name="imgLoader"
+               Source="lunges.gif"
+               HorizontalOptions="Center"
+               IsAnimationPlaying="False"/>
+        <ImageButton Grid.Row="2"
+                    Source="startlogo.png"                
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                     BackgroundColor="Green"
+                     CornerRadius="15"
+                     HeightRequest="60"
+                     WidthRequest="90"
+                     Clicked="NextExercise_Clicked"/>
+        <Label Grid.Row="3"
+               Text="Техніка виконання"
+               FontFamily="RubikBold"
+               FontSize="23"
+               HorizontalOptions="Start"
+               Margin="10,10,0,0"/>
+        <Label Grid.Row="4"
+               Text="1.Прийміть стійке положення, поставивши ноги трохи вже ширини плечей. Руки зафіксуйте на поясі або складіть біля грудей в замок.&#10;2.Зробіть широкий крок вперед, щоб робоча нога утворила прямий кут в згині, а стегно встало перпендикулярно підлозі.&#10;3.Після досягнення нижньої фази починайте вставати. Перерозподіляйте вага на опорну ногу, щоб досягти максимальної напруги в м’язах."
+               HorizontalOptions="Start"
+               FontFamily="RubikRegular"
+               FontSize="17"
+               Margin="10,0,5,0"/>
+    </Grid>
+</ContentPage>
