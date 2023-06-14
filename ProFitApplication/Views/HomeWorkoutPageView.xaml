@@ -22,7 +22,7 @@
                 Grid.Row="0"
                 Text="Комплекси вправ для виконання вдома"
                 FontFamily="RubikBold"
-                FontSize="25"
+                FontSize="23"
                 HorizontalOptions="Center"
                 TextColor="#baf247"/>
 

@@ -28,7 +28,7 @@
                      WidthRequest="90"
                      Clicked="NextExercise_Clicked"/>
         <Label Grid.Row="3"
-               Text="Техніка виконання"
+               Text="Техніка та кількість виконань - 12 разів"
                FontFamily="RubikBold"
                FontSize="23"
                HorizontalOptions="Start"

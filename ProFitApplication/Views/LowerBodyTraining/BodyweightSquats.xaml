@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProFitApplication.Views.LowerBodyTraining.BodyweightSquats"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Title="BodyweightSquats"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False">
@@ -12,11 +13,11 @@
                FontSize="24"
                VerticalOptions="Center"
                HorizontalOptions="Center"/>
-        <Image Grid.Row="1"
-               x:Name="imgLoader"
-               Source="squat.gif"
-               HorizontalOptions="Center"
-               IsAnimationPlaying="False"/>
+        <skia:SKLottieView 
+                Grid.Row="1"
+                RepeatCount="-1"
+                Source="reactive_squats.json"
+                HorizontalOptions="Center"/>
         <ImageButton Grid.Row="2"
                     Source="startlogo.png"                
                     HorizontalOptions="Center"
@@ -27,7 +28,7 @@
                      WidthRequest="90"
                       Clicked="NextExercise_Clicked"/>
         <Label Grid.Row="3"
-               Text="Техніка виконання"
+               Text="Техніка та кількість виконань - 12 разів"
                FontFamily="RubikBold"
                FontSize="23"
                HorizontalOptions="Start"

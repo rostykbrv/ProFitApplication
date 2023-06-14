@@ -8,6 +8,8 @@ using ProFitApplication.Views.Exercises;
 using ProFitApplication.Views.WeightTraining;
 using ProFitApplication.Views.UpperBodyTraining;
 using ProFitApplication.Views.LowerBodyTraining;
+using ProFitApplication.Views.KhathaYoga;
+using ProFitApplication.Views.PowerYoga;
 
 namespace ProFitApplication;
 
@@ -20,6 +22,7 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.UseSkiaSharp()
             .UseMauiCommunityToolkit()
+            .UseMauiCommunityToolkitMediaElement()
             .ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -62,6 +65,17 @@ public static class MauiProgram
         builder.Services.AddSingleton<GluteBridges>();
         builder.Services.AddSingleton<Walking_Lunges>();
         builder.Services.AddSingleton<WallSit>();
+        builder.Services.AddSingleton<LungesJump>();
+        builder.Services.AddSingleton<SquatReach>();
+        builder.Services.AddSingleton<DiamondAsan>();
+        builder.Services.AddSingleton<MatsyasanaFishPose>();
+        builder.Services.AddSingleton<Sukhasan>();
+        builder.Services.AddSingleton<Baby>();
+        builder.Services.AddSingleton<SixPoints>();
+        builder.Services.AddSingleton<Sumo>();
+        builder.Services.AddSingleton<Tree>();
+        builder.Services.AddSingleton<Triangle>();
+        builder.Services.AddSingleton<Warrior>();
 
 
         builder.Services.AddSingleton<StartPageViewModel>();

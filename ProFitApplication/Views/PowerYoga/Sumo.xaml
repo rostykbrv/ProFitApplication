@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProFitApplication.Views.PowerYoga.Sumo"
+             Title="Sumo">
+    <Grid RowDefinitions=".1*,.5*,.1*,.1*,.3*">
+        <Label Grid.Row="0"
+               Text="Рудрасана"
+               FontFamily="RubikBold"
+               FontSize="24"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <Image Grid.Row="1"
+               Source="sumoasan.jpg"
+               HorizontalOptions="Center"
+               IsAnimationPlaying="False"/>
+        <ImageButton Grid.Row="2"
+                    Source="startlogo.png"                
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                     BackgroundColor="Green"
+                     CornerRadius="15"
+                     HeightRequest="60"
+                     WidthRequest="90"
+                     Clicked="NextExercise_Clicked"/>
+        <Label Grid.Row="3"
+               Text="Техніка виконання"
+               FontFamily="RubikBold"
+               FontSize="23"
+               HorizontalOptions="Start"
+               Margin="10,10,0,0"/>
+        <Label Grid.Row="4"
+               Text="1.Поставте ноги ширше плечей і розгорніть стопи в сторони.&#10;2.Складіть долоні перед собою. Повільно згинайте коліна&#10;3.У такому положенні необхідно вистояти як можна довше, після чого можна плавно опуститися на підлогу."
+               HorizontalOptions="Start"
+               FontFamily="RubikRegular"
+               FontSize="17"
+               Margin="10,0,5,0"/>
+    </Grid>
+</ContentPage>

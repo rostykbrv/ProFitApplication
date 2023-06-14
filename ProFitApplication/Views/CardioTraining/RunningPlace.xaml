@@ -2,21 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProFitApplication.Views.Exercises.RunningPlace"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              Title="RunningPlace"
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False">
     <Grid RowDefinitions=".1*,.5*,.1*,.1*,.3*">
         <Label Grid.Row="0"
-               Text="Біг на місці"
+               Text="Реактивні присідання"
                FontFamily="RubikBold"
                FontSize="24"
                VerticalOptions="Center"
                HorizontalOptions="Center"/>
-        <Image Grid.Row="1"
-               x:Name="imgLoader"
-               Source="running_on_place.gif"
-               HorizontalOptions="Center"
-               IsAnimationPlaying="False"/>
+        <skia:SKLottieView 
+                Grid.Row="1"
+                RepeatCount="-1"
+                Source="reactive_squats.json"
+                HorizontalOptions="Center"/>
         <ImageButton Grid.Row="2"
                     Source="startlogo.png"                
                     HorizontalOptions="Center"
@@ -27,13 +28,13 @@
                      WidthRequest="90"
                      Clicked="NextExercise_Clicked"/>
         <Label Grid.Row="3"
-               Text="Техніка виконання"
+               Text="Техніка та кількість виконань - 18 разів"
                FontFamily="RubikBold"
                FontSize="23"
                HorizontalOptions="Start"
                Margin="10,10,0,0"/>
         <Label Grid.Row="4"
-               Text="1.Плечі тримайте прямо, а живіт втягніть.&#10;2.Руки зігніть в ліктях трохи нижче рівня грудей.&#10;3.Вдих робіть носом, а видих ротом.&#10;4.Стопа повинна приземлятися на носок."
+               Text="1.Встаньте, розставивши ноги на ширині плечей і злегка зігнувши коліна.&#10;2.Зігніть ноги в колінах і опускайтеся в положення повного присідання.&#10;3.Пригайте та піднімайте тіло вгору і відривайте його від підлоги, розтягуючи ноги..&#10;4.Після приземлення негайно повторіть наступний стрибок."
                HorizontalOptions="Start"
                FontFamily="RubikRegular"
                FontSize="17"

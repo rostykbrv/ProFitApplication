@@ -30,7 +30,7 @@ namespace ProFitApplication.ViewModels
                 },
                 new ExerciseGroup
                 {
-                    ExerciseGroupName = "Силовая йога",
+                    ExerciseGroupName = "Силова йога",
                     ExerciseGroupDescription = "Стиль йоги, який поєднує рухи, силу, гнучкість та дихання. Цей стиль йоги побудований на основі вправ асан, що виконуються послідовно та ритмічно, допомагаючи покращити силу, витривалість, гнучкість та спритність.",
                     ExerciseGroupLevel = "Продвинутий",
                     ExerciseGroupImage = "yoga2.jpg",

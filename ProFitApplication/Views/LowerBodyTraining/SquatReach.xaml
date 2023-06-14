@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProFitApplication.Views.LowerBodyTraining.SquatReach"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="SquatReach"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
+    <Grid RowDefinitions=".1*,.5*,.1*,.1*,.3*">
+        <Label Grid.Row="0"
+               Text="Присідання з досяганням"
+               FontFamily="RubikBold"
+               FontSize="24"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+        <skia:SKLottieView 
+                Grid.Row="1"
+                RepeatCount="-1"
+                Source="squatreach.json"
+                HorizontalOptions="Center"/>
+        <ImageButton Grid.Row="2"
+                    Source="startlogo.png"                
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                     BackgroundColor="Green"
+                     CornerRadius="15"
+                     HeightRequest="60"
+                     WidthRequest="90"
+                     Clicked="NextExercise_Clicked"/>
+        <Label Grid.Row="3"
+               Text="Техніка та кількість виконань - 16 разів"
+               FontFamily="RubikBold"
+               FontSize="23"
+               HorizontalOptions="Start"
+               Margin="10,10,0,0"/>
+        <Label Grid.Row="4"
+               Text="1.Встаньте на одну ногу зі злегка зігнутим коліном. Іншу ногу підніміть над землею.&#10;2.Рукою, протилежною до ноги, що стоїть, простягніть руку до протилежного боку тіла і торкніться землі.&#10;3.Повторіть цю вправу на рівновагу, стоячи на іншій нозі."
+               HorizontalOptions="Start"
+               FontFamily="RubikRegular"
+               FontSize="17"
+               Margin="10,0,5,0"/>
+    </Grid>
+</ContentPage>

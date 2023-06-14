@@ -1,4 +1,6 @@
 
+using ProFitApplication.Views.LowerBodyTraining;
+
 namespace ProFitApplication.Views.Exercises;
 
 public partial class JumpingJackPage : ContentPage
@@ -11,6 +13,6 @@ public partial class JumpingJackPage : ContentPage
 
     private async void NextExercise_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(HighKnees));
+        await Shell.Current.GoToAsync(nameof(LungesJump));
     }
 }
